@@ -9,7 +9,6 @@ function buildHierarchy(csv) {
     const sequence = csv[i][0]
     const size = +csv[i][1]
     if (isNaN(size)) {
-      // e.g. if this is a header row
       continue
     }
     const parts = sequence.split('-')
@@ -156,7 +155,6 @@ export default function Rectangle() {
       .selectAll('path')
       .data(
         root.descendants().filter((d) => {
-          // Don't draw the root node, and for efficiency, filter out nodes that would be too small to see
           return d.depth && d.x1 - d.x0 > 0.001
         })
       )
@@ -179,13 +177,5 @@ export default function Rectangle() {
       })
   }
 
-  return (
-    <div>
-      <div>
-        This is a Nextjs verion of the sunbusrt from
-        https://observablehq.com/@kerryrodden/sequences-sunburst
-      </div>
-      <div ref={ref}></div>
-    </div>
-  )
+  return <div ref={ref}></div>
 }
