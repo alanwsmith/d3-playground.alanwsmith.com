@@ -1,10 +1,9 @@
 import React, { useState, useEffect, RefObject } from 'react'
 import * as d3 from 'd3'
 
-import csv from './basic-7.json'
+import csv from './data.json'
 
 function buildHierarchy(csv) {
-  // Helper function that transforms the given CSV into a hierarchical format.
   const root = { name: 'root', children: [] }
   for (let i = 0; i < csv.length; i++) {
     const sequence = csv[i][0]
@@ -175,7 +174,6 @@ export default function Rectangle() {
           .style('visibility', null)
           .select('.percentage')
           .text(percentage + '%')
-        // Update the value of this view with the currently hovered sequence and percentage
         element.value = { sequence, percentage }
         element.dispatchEvent(new CustomEvent('input'))
       })
@@ -184,7 +182,7 @@ export default function Rectangle() {
   return (
     <div>
       <div>
-        This is trying to run the sunburst from:
+        This is a Nextjs verion of the sunbusrt from
         https://observablehq.com/@kerryrodden/sequences-sunburst
       </div>
       <div ref={ref}></div>
