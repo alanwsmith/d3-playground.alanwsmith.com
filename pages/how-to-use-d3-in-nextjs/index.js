@@ -1,6 +1,7 @@
 import D3Example from '../../components/D3Example'
 import SourceCode from '../../components/SourceCode'
 import fs from 'fs'
+import Link from 'next/link'
 
 export default function Page(props) {
   return (
@@ -12,60 +13,74 @@ export default function Page(props) {
         <a href="https://observablehq.com/@kerryrodden/sequences-sunburst">
           Sequences Sunburst
         </a>{' '}
-        in Next.js. It took a while to figure out how to use{' '}
-        <a href="https://d3js.org/">D3</a> properly. In the interest of sharing,
-        here&apos;s how to do it.
+        in Next.js. You can see my version&apos;s code{' '}
+        <Link href="/sunburst-sequences">
+          <a>here</a>
+        </Link>
+        .
       </p>
+      <p>
+        The visualization is done with <a href="https://d3js.org/">D3</a>. It
+        took some time to figure out how to get the library to work properly in
+        Next.js. In the interest of sharing, here&apos;s how to do it.
+      </p>
+
       <h2>The Specifics</h2>
-      <p>
-        After creating your basic Next.js app, install D3 with:
-        <SourceCode code={`npm install d3`} language="bash" lines={false} />
-      </p>
-      <p>
-        Once you&apos;ve got it installed, create a file at{' '}
-        <code>components/D3Example.js</code> and paste this example code into
-        it:
-        <SourceCode code={props.code1} language="jsx" />
-      </p>
-      <p>
-        Then, create a file at <code>pages/d3-example.js</code> with :
-        <SourceCode code={props.code2} language="jsx" />
-      </p>
 
-      <p>
-        That&apos;s it. If you fire up your site and visit the page you&apos;ll
-        see the D3 equivelent of Hello, World.
-      </p>
+      <ol>
+        <li>
+          After creating your basic Next.js app, install D3 with:
+          <SourceCode code={`npm install d3`} language="bash" lines={false} />
+        </li>
+        <li>
+          Next, create a file at <code>components/D3Example.js</code> and paste
+          this into it:
+          <SourceCode code={props.code1} language="jsx" />
+        </li>
+        <li>
+          Then, create a file at <code>pages/d3-example.js</code> with :
+          <SourceCode code={props.code2} language="jsx" />
+        </li>
 
-      <D3Example width="200" height="200" />
+        <li>
+          And, that&apos;s it. If you fire up your site and visit the{' '}
+          <code>/d3-example</code> page you&apos;ll see a green circle like this
+          one. The D3 equivelent of Hello, World.
+          <D3Example width="200" height="200" />
+        </li>
+      </ol>
 
-      <h2 className="mt-6 pt-4 border-t border-gray-700">More Details</h2>
+      <h2 className="mt-6 pt-4 ">More Details</h2>
 
       <ul>
         <li>
-          I load the entire set of D3 functionality via:
+          This example loads the entire D3 library via:
           <SourceCode
             code={`import * as d3 from 'd3'`}
             language="jsx"
             lines={false}
           />
-          It&apos;s also possible to import just the parts you need with
-          individual modules like
+          It&apos;s possible to import only the parts you need with individual
+          modules like:
           <SourceCode
             code={`import { scaleLinear } from "d3-scale"`}
             language="jsx"
             lines={false}
           />
-          Using the individual modules is probably the way to go for production
+          Using the individual modules is probably the way to go for production.
+          I'm not sure where the best place to get a list of the modules is, but
+          you find them along with the rest of the D3 project{' '}
+          <a href="https://github.com/d3">here</a>
         </li>
         <li>
           All the <code>createRef</code> and <code>useEffect</code> stuff is
-          designed to prevent the SVG from reloading if the comopnent updates.
+          designed to prevent the SVG from reloading if the comopnent updates
         </li>
         <li>
           The <code>svg.selectAll(&apos;*&apos;).remove()</code> line prevents
           issues with re-appending elemnts to the SVG when the page hot-reloads
-          during development
+          during development. While it&apos;s not needed for prod it won&apos;t
+          have any real effect so I leave it in
         </li>
         <li>
           This setup does the D3 rendering on the client side. It looks like{' '}
@@ -73,19 +88,23 @@ export default function Page(props) {
           go for server-side, but I haven&apos;t messed with that yet
         </li>
         <li>
-          Lots of the D3 examples I&apos;ve are for older versions that
-          aren&apos;t compatible with the most recent one that comes from npm.
-          It appears that as of Jan. 2022, the most recent npm install is either
-          version 5 or 6. If you have problems getting something to work, trying
-          to figure out the example version number is a good first step.
+          Lots of the D3 examples I&apos;ve found are for older versions that
+          aren&apos;t compatible with what gets installed from npm by default.
+          If you have problems getting something to work, figuring out if
+          there&apos;s a version conflict is a good first step
         </li>
       </ul>
       <h2>Send Off</h2>
       <p>
-        This is another case of there not being a lot of code, but it took some
-        doing to find it and refine it. I hope you find it useful. If you see
-        anything that could be improved{' '}
-        <a href="https://twitter.com/TheIdOfAlan">let me know</a>.
+        This is another case of something that took a long time to find and
+        refine that ended up being a relatively small amount of code. That
+        happens. Hopefully this saves you that time and lets you get on to
+        building your actual thing.{' '}
+      </p>
+      <p>Happy coding,</p>
+
+      <p>
+        - <a href="https://twitter.com/TheIdOfAlan">a</a>
       </p>
     </div>
   )

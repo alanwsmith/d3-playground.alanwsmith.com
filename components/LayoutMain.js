@@ -18,9 +18,27 @@ export default function LayoutMain({ children }) {
           </a>{' '}
         </div>
       </nav>
-      <main className="pb-16 mx-auto container pt-3 px-6 max-w-prose">
+      <main className="pb-10 mx-auto container pt-3 px-6 max-w-prose">
         {children}
       </main>
+      <footer className="max-w-prose mx-auto px-6">
+        <div className="text-center text-sm text-gray-500 border-t border-gray-700 pt-4">
+          made by{' '}
+          <a className="text-blue-400" href="https://twitter.com/TheIdOfAlan">
+            alan w. smith
+          </a>
+        </div>
+        <div className="text-center text-sm pb-8 text-gray-500 ">
+          who also has a{' '}
+          <a className="text-blue-400" href="https://www.alanwsmith.com/">
+            full website
+          </a>{' '}
+          and a{' '}
+          <a className="text-blue-400" href="https://podcast.alanwsmith.com/">
+            podcast
+          </a>
+        </div>
+      </footer>
     </>
   )
 }

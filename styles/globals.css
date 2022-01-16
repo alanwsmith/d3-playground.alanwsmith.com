@@ -34,6 +34,11 @@
     @apply pl-5;
     @apply pb-2;
   }
+  ol {
+    @apply list-decimal;
+    @apply pl-5;
+    @apply pb-2;
+  }
   li {
     @apply pb-3;
   }

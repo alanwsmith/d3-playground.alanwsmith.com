@@ -1,4 +1,4 @@
-import React, { useState, useEffect, RefObject } from 'react'
+import { useEffect, createRef } from 'react'
 import * as d3 from 'd3'
 
 function buildHierarchy(csv) {
@@ -52,8 +52,8 @@ function breadcrumbPoints(d, i) {
   return points.join(' ')
 }
 
-export default function SequencesSunburst({ json }) {
-  const ref = React.createRef()
+export default function SunburstSequences({ json }) {
+  const ref = createRef()
 
   useEffect(() => {
     draw()
@@ -72,7 +72,7 @@ export default function SequencesSunburst({ json }) {
       .scaleOrdinal()
       .domain(['home', 'product', 'search', 'account', 'other', 'end'])
       .range(['#5d85cf', '#7c6561', '#da7847', '#6fb971', '#9e70cf', '#bbbbbb'])
-    const width = 640
+    const width = 1000
     const radius = width / 2
     const arc = d3
       .arc()
@@ -92,7 +92,8 @@ export default function SequencesSunburst({ json }) {
 
     const root = partition(data)
 
-    const svg = d3.select(ref.current).append('svg')
+    const svg = d3.select(ref.current)
+    svg.selectAll('*').remove()
     const element = svg.node()
     element.value = { sequence: [], percentage: 0.0 }
     const label = svg
@@ -163,5 +164,5 @@ export default function SequencesSunburst({ json }) {
       })
   }
 
-  return <div ref={ref}></div>
+  return <svg ref={ref}></svg>
 }
