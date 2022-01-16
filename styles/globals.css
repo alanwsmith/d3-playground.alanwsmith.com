@@ -29,4 +29,7 @@
   li {
     @apply pb-3;
   }
+  p {
+    @apply pb-4;
+  }
 }

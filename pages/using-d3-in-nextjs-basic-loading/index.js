@@ -5,23 +5,33 @@ import fs from 'fs'
 export default function Page(props) {
   return (
     <div>
-      <h1>Using D3 in Next.js - Basic Loading</h1>
+      <h1>Using D3 in Next.js</h1>
       <ul>
         <li>
-          The code below shows the basic setup for how to use D3 in a Next.js
-          app
+          This is how to use the <a href="https://d3js.org/">D3</a> javascript
+          library in <a href="https://nextjs.org/">Next.js</a>. The rending is
+          done client-side instead of server-side. (It looks like{' '}
+          <a href="https://github.com/d3-node/d3-node">d3-node</a> is the way to
+          go for server-side, but I haven't messed with that yet.)
         </li>
         <li>
-          D3 is installed with <code className="language-bash">npm i d3</code>
+          First, install D3 with:
+          <SourceCode code={`npm install d3`} language="bash" lines={false} />
         </li>
         <li>
-          I&apos;m using{' '}
-          <code className="language-jsx">import * as d3 from 'd3'</code> to load
-          everything. It&apos;s also possible to import just the parts you need
-          with individual modules like{' '}
-          <code className="language-jsx">
-            import {'{'} scaleLinear {'}'} from "d3-scale"
-          </code>
+          I load the entire set of D3 functionality via:
+          <SourceCode
+            code={`import * as d3 from 'd3'`}
+            language="jsx"
+            lines={false}
+          />
+          It&apos;s also possible to import just the parts you need with
+          individual modules like
+          <SourceCode
+            code={`import {'{'} scaleLinear {'}'} from "d3-scale"`}
+            language="jsx"
+            lines={false}
+          />
         </li>
       </ul>
       <p>
@@ -33,7 +43,7 @@ export default function Page(props) {
         <D3Svg width="400" height="150" />
       </div>
       <p>And this is the source code it self</p>
-      <SourceCode code={props.fileContents} />
+      <SourceCode code={props.fileContents} language="jsx" />
       <p>
         One thing to point out is that lots of the D3 examples are for older
         versions that aren't compatible with the most recent one from npm. It

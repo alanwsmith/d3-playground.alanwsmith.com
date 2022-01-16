@@ -1,4 +1,4 @@
-import React, { useState, useEffect, RefObject } from 'react'
+import React, { useEffect, RefObject } from 'react'
 import * as d3 from 'd3'
 
 export default function D3Svg({ width, height }) {
