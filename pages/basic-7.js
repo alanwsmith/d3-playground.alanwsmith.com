@@ -18,7 +18,7 @@ export default function Rectangle() {
     //   })
     // }
     // return cleanUp
-  }, [])
+  })
 
   const draw = () => {
     const svg = d3

@@ -6,7 +6,7 @@ export default function Rectangle() {
 
   useEffect(() => {
     draw()
-  }, [])
+  })
 
   const draw = () => {
     const svg = d3.select(ref.current).attr('width', 100).attr('height', 100)

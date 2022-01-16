@@ -6,7 +6,7 @@ export default function D3Example({ width, height }) {
 
   useEffect(() => {
     draw()
-  }, [])
+  })
 
   const draw = () => {
     const svg = d3.select(ref.current)

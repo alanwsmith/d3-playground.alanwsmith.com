@@ -10,7 +10,7 @@ export default function Rectangle() {
     draw()
     // setInitialized(true)
     // }
-  }, [])
+  })
 
   const draw = () => {
     const svg = d3

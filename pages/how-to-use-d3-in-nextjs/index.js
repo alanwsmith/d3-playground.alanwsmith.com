@@ -33,8 +33,8 @@ export default function Page(props) {
       </p>
 
       <p>
-        That's it. If you fire up your site and visit the page you&apos;ll see
-        the D3 equivelent of Hello, World.
+        That&apos;s it. If you fire up your site and visit the page you&apos;ll
+        see the D3 equivelent of Hello, World.
       </p>
 
       <D3Example width="200" height="200" />
@@ -63,21 +63,21 @@ export default function Page(props) {
           designed to prevent the SVG from reloading if the comopnent updates.
         </li>
         <li>
-          The <code>svg.selectAll('*').remove()</code> line prevents issues with
-          re-appending elemnts to the SVG when the page hot-reloads during
-          development
+          The <code>svg.selectAll(&apos;*&apos;).remove()</code> line prevents
+          issues with re-appending elemnts to the SVG when the page hot-reloads
+          during development
         </li>
         <li>
           This setup does the D3 rendering on the client side. It looks like{' '}
           <a href="https://github.com/d3-node/d3-node">d3-node</a> is the way to
-          go for server-side, but I haven't messed with that yet
+          go for server-side, but I haven&apos;t messed with that yet
         </li>
         <li>
-          Lots of the D3 examples I&apos;ve are for older versions that aren't
-          compatible with the most recent one that comes from npm. It appears
-          that as of Jan. 2022, the most recent npm install is either version 5
-          or 6. If you have problems getting something to work, trying to figure
-          out the example version number is a good first step.
+          Lots of the D3 examples I&apos;ve are for older versions that
+          aren&apos;t compatible with the most recent one that comes from npm.
+          It appears that as of Jan. 2022, the most recent npm install is either
+          version 5 or 6. If you have problems getting something to work, trying
+          to figure out the example version number is a good first step.
         </li>
       </ul>
       <h2>Send Off</h2>

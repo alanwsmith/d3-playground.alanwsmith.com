@@ -57,7 +57,7 @@ export default function SequencesSunburst({ json }) {
 
   useEffect(() => {
     draw()
-  }, [])
+  })
 
   const draw = () => {
     const data = buildHierarchy(json)

@@ -1,8 +1,6 @@
 import React, { useState, useEffect, RefObject } from 'react'
 import * as d3 from 'd3'
 
-console.log(d3.version)
-
 /////// SKIP TO 'NEXT' TO GET PAST THE DATA
 const csvData = `
 account-account-account-account-account-account,22781
@@ -13642,15 +13640,11 @@ prod
 /////// THIS IS 'NEXT' FOR THE END OF THE DATA
 
 export default function Rectangle() {
-  const [initialized, setInitialized] = useState(false)
   const ref = React.createRef()
 
   useEffect(() => {
-    if (initialized === false) {
-      draw()
-      setInitialized(true)
-    }
-  }, [setInitialized])
+    draw()
+  })
 
   const draw = () => {
     // Dimensions of sunburst.
@@ -14018,7 +14012,7 @@ export default function Rectangle() {
         https://bl.ocks.org/kerryrodden/766f8f6d31f645c39f488a0befa1e3c8
       </div>
       <div>
-        This doesn't quite work, I think the code is based of D3v4 but the
+        This doesn&apos;t quite work, I think the code is based of D3v4 but the
         installed version might be D3v5
       </div>
       <div id="sequence"></div>

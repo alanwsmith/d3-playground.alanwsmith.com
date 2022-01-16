@@ -26,8 +26,8 @@ export default function Rectangle() {
       <div>
         This works, but there is an issue where it duplicates, looks like that
         might happen everytime the component is rendered. Might be able to
-        useState to set an init to deal with that, but looking tosee if there's
-        another way.{' '}
+        useState to set an init to deal with that, but looking to see if
+        there&apos;s another way.{' '}
       </div>
       <div ref={ref}></div>
     </div>
