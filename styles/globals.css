@@ -16,15 +16,23 @@
   h1 {
     @apply text-3xl;
     @apply font-bold;
+    @apply pt-2;
     @apply pb-4;
   }
   h2 {
     @apply text-2xl;
     @apply font-bold;
+    @apply pt-2;
+    @apply pb-3;
   }
   h3 {
     @apply text-xl;
     @apply font-bold;
+  }
+  ul {
+    @apply list-disc;
+    @apply pl-5;
+    @apply pb-2;
   }
   li {
     @apply pb-3;

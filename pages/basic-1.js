@@ -1,5 +1,6 @@
 import React, { useEffect, RefObject } from 'react'
 import * as d3 from 'd3'
+
 const Rectangle = () => {
   const ref = React.createRef()
 
@@ -20,7 +21,9 @@ const Rectangle = () => {
     <div>
       <div>
         This is a super basic example and not necessarily the way I want to do
-        it, but it's a start.
+        it, but it's a start. - This is a strong start, the later examples show
+        how to add the selectall thing and remove to deal with hot reloading and
+        how to send just the SVG instead of a full div.
       </div>
       <div className="Rectangle" ref={ref}>
         <svg width="500" height="500">
