@@ -68,8 +68,8 @@ export default function Page(props) {
             lines={false}
           />
           Using the individual modules is probably the way to go for production.
-          I'm not sure where the best place to get a list of the modules is, but
-          you find them along with the rest of the D3 project{' '}
+          I&apos;m not sure where the best place to get a list of the modules
+          is, but you find them along with the rest of the D3 project{' '}
           <a href="https://github.com/d3">here</a>
         </li>
         <li>

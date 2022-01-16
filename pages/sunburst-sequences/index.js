@@ -19,7 +19,7 @@ export default function Home(props) {
         by <a href="https://twitter.com/kerryrodden">Kerry Rodden</a>. I pulled
         the code out to it&apos;s own component that can be used multiple times
         on a page. It tooks some time to get setup in Next.js. In the interest
-        of sharing, here's how to do it.
+        of sharing, here&apos;s how to do it.
       </p>
       <h2>The Example</h2>
       <p>
@@ -70,8 +70,8 @@ export default function Home(props) {
           <SourceCode code={props.code2} language="jsx" />
         </li>
         <li>
-          And, that's it. Fire up your site and visit `/sunburst-sequences` to
-          see your visualization
+          And, that&apos;s it. Fire up your site and visit `/sunburst-sequences`
+          to see your visualization
         </li>
       </ol>
 
@@ -90,10 +90,10 @@ export default function Home(props) {
         <li>
           I&apos;m not setting a width or height on the svg element return from
           the component. There is a hard coded width on line 75 though. The
-          behavoir I'm seeing is that if the width is set to something larger
-          than whatever elemnt the SVG is in, it expandes to fill it up, but
-          doesn&apos;t break out of it. If the width is less than the containing
-          element, it shrinks down to whatever the defined size is.
+          behavoir I&apos;m seeing is that if the width is set to something
+          larger than whatever elemnt the SVG is in, it expandes to fill it up,
+          but doesn&apos;t break out of it. If the width is less than the
+          containing element, it shrinks down to whatever the defined size is.
         </li>
       </ul>
 
