@@ -5,6 +5,8 @@ export default function Page() {
 
   return (
     <div>
+      <h1>D3 Scratchpad</h1>
+
       <p>
         This is my scratchpad for making <a href="https://d3js.org/">D3</a>{' '}
         examples that work with <a href="https://nextjs.org/">Next.js</a>
@@ -18,8 +20,11 @@ export default function Page() {
       <p>
         There&apos;s obviously not much here right now. I mainly built it to
         figure out the Next.js Sunburst Sequence. I&apos;ll add to it over time
-        when I come up with new things to mess with
+        when I come up with new things to mess with.
       </p>
+
+      <h2>The Examples</h2>
+
       <ul>
         {links.map((link) => (
           <li key={link}>
