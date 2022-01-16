@@ -2,15 +2,15 @@ import React, { useState, useEffect, RefObject } from 'react'
 import * as d3 from 'd3'
 
 export default function Rectangle() {
-  const [initialized, setInitialized] = useState(false)
+  // const [initialized, setInitialized] = useState(false)
   const ref = React.createRef()
 
   useEffect(() => {
-    if (initialized === false) {
-      draw()
-      setInitialized(true)
-    }
-  }, [setInitialized])
+    // if (initialized === false) {
+    draw()
+    // setInitialized(true)
+    // }
+  }, [])
 
   const draw = () => {
     const svg = d3
@@ -28,8 +28,8 @@ export default function Rectangle() {
   return (
     <div>
       <div>
-        This looks like it takes care of the duplication issue via the useState
-        set of the initalized flag
+        Was using `setInitialized(true)`, but if you just pass an empty array it
+        only does things one. asdf
       </div>
       <div ref={ref}></div>
     </div>

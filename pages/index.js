@@ -1,7 +1,11 @@
 import Link from 'next/link'
 
 export default function Page() {
-  const links = ['sunburst-basic', 'sunburst-sequences']
+  const links = [
+    'using-d3-in-nextjs-basic-loading',
+    'sequences-sunburst',
+    'sunburst-basic',
+  ]
 
   return (
     <ul>
