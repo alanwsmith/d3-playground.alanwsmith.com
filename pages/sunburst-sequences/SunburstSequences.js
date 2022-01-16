@@ -1,8 +1,6 @@
 import React, { useState, useEffect, RefObject } from 'react'
 import * as d3 from 'd3'
 
-import csv from './data.json'
-
 function buildHierarchy(csv) {
   const root = { name: 'root', children: [] }
   for (let i = 0; i < csv.length; i++) {
@@ -18,7 +16,6 @@ function buildHierarchy(csv) {
       const nodeName = parts[j]
       let childNode = null
       if (j + 1 < parts.length) {
-        // Not yet at the end of the sequence; move down the tree.
         let foundChild = false
         for (let k = 0; k < children.length; k++) {
           if (children[k]['name'] == nodeName) {
@@ -27,14 +24,12 @@ function buildHierarchy(csv) {
             break
           }
         }
-        // If we don't already have a child node for this branch, create it.
         if (!foundChild) {
           childNode = { name: nodeName, children: [] }
           children.push(childNode)
         }
         currentNode = childNode
       } else {
-        // Reached the end of the sequence; create a leaf node.
         childNode = { name: nodeName, value: size }
         children.push(childNode)
       }
@@ -52,25 +47,20 @@ function breadcrumbPoints(d, i) {
   points.push(`${breadcrumbWidth},${breadcrumbHeight}`)
   points.push(`0,${breadcrumbHeight}`)
   if (i > 0) {
-    // Leftmost breadcrumb; don't include 6th vertex.
     points.push(`${tipWidth},${breadcrumbHeight / 2}`)
   }
   return points.join(' ')
 }
 
-export default function Rectangle() {
-  const [initialized, setInitialized] = useState(false)
+export default function SequencesSunburst({ json }) {
   const ref = React.createRef()
 
   useEffect(() => {
-    if (initialized === false) {
-      draw()
-      setInitialized(true)
-    }
-  }, [setInitialized])
+    draw()
+  }, [])
 
   const draw = () => {
-    const data = buildHierarchy(csv)
+    const data = buildHierarchy(json)
     const partition = (data) =>
       d3.partition().size([2 * Math.PI, radius * radius])(
         d3
@@ -102,7 +92,6 @@ export default function Rectangle() {
 
     const root = partition(data)
 
-    // const svg = d3.create('svg')
     const svg = d3.select(ref.current).append('svg')
     const element = svg.node()
     element.value = { sequence: [], percentage: 0.0 }
@@ -134,7 +123,6 @@ export default function Rectangle() {
       .selectAll('path')
       .data(
         root.descendants().filter((d) => {
-          // Don't draw the root node, and for efficiency, filter out nodes that would be too small to see
           return d.depth && d.x1 - d.x0 > 0.001
         })
       )
@@ -161,9 +149,7 @@ export default function Rectangle() {
       .join('path')
       .attr('d', mousearc)
       .on('mouseenter', (event, d) => {
-        // Get the ancestors of the current segment, minus the root
         const sequence = d.ancestors().reverse().slice(1)
-        // Highlight the ancestors
         path.attr('fill-opacity', (node) =>
           sequence.indexOf(node) >= 0 ? 1.0 : 0.3
         )

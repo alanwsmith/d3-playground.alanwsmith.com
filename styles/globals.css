@@ -16,6 +16,7 @@
   h1 {
     @apply text-3xl;
     @apply font-bold;
+    @apply pb-4;
   }
   h2 {
     @apply text-2xl;
@@ -24,5 +25,11 @@
   h3 {
     @apply text-xl;
     @apply font-bold;
+  }
+  li {
+    @apply pb-3;
+  }
+  p {
+    @apply pb-4;
   }
 }
