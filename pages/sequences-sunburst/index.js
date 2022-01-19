@@ -2,14 +2,22 @@ import fs from 'fs'
 
 import Link from 'next/link'
 
-import SunburstSequences from '../../components/SunburstSequences'
+import SunburstSequences from '../../components/SequencesSunburst'
 import SourceCode from '../../components/SourceCode'
+import MetaData from '../../components/MetaData'
 
-import json from '../../public/data/sunburst-sequences.json'
+import json from '../../public/data/sequences-sunburst.json'
 
 export default function Home(props) {
   return (
     <div>
+      <MetaData
+        description="This is how to make the awesome Sequences Sunburst D3 visualization in Next.js"
+        image="https://res.cloudinary.com/awsimages/image/upload/w_1200,h_630/c_fit,l_text:Arial_72_bold:Create%20A%20Sequences%20Sunburst%20Data%20Visualization%20With%20D3%20In%20Next.js,co_rgb:c4d4f4,w_1100/fl_layer_apply,g_north_west,x_60,y_220/og-images/d3-playground-main.png"
+        title="Create A Sequences Sunburst Data Visualization With D3 In Next.js"
+        type="article"
+        url="https://d3-playground.alanwsmith.com/sequences-sunburst"
+      />
       <h1>D3 Sunburst Sequences For Next.js</h1>
       <p>
         This is a Next.js implementation of the awesome{' '}
@@ -38,12 +46,12 @@ export default function Home(props) {
         </li>
         <li>
           Create a JSON data file with the format like{' '}
-          <Link href="/data/sunburst-sequences.json">
+          <Link href="/data/sequences-sunburst.json">
             <a>this one</a>
           </Link>{' '}
           and drop it in:
           <SourceCode
-            code={`public/data/sunburst-sequences.json`}
+            code={`public/data/sequences-sunburst.json`}
             language="bash"
             lines={false}
           />
@@ -52,7 +60,7 @@ export default function Home(props) {
         <li>
           Create a page that will display the visualization at:
           <SourceCode
-            code={`pages/sunburst-sequences.js`}
+            code={`pages/sequences-sunburst.js`}
             language="bash"
             lines={false}
           />
@@ -62,7 +70,7 @@ export default function Home(props) {
         <li>
           This is the meat of it. Create the file to house the component at:
           <SourceCode
-            code={`components/SunburstSequences.js`}
+            code={`components/SequencesSunburst.js`}
             language="bash"
             lines={false}
           />
@@ -70,7 +78,7 @@ export default function Home(props) {
           <SourceCode code={props.code2} language="jsx" />
         </li>
         <li>
-          And, that&apos;s it. Fire up your site and visit `/sunburst-sequences`
+          And, that&apos;s it. Fire up your site and visit `/sequences-sunburst`
           to see your visualization
         </li>
       </ol>
@@ -114,8 +122,8 @@ export default function Home(props) {
 }
 
 export async function getStaticProps(context) {
-  const file1 = './pages/example-page-sunburst-sequences.js'
-  const file2 = `./components/SunburstSequences.js`
+  const file1 = './pages/example-page-sequences-sunburst.js'
+  const file2 = `./components/SequencesSunburst.js`
   try {
     const code1 = fs.readFileSync(file1, `utf8`)
     const code2 = fs.readFileSync(file2, `utf8`)

@@ -1,10 +1,19 @@
 import Link from 'next/link'
+import MetaData from '../components/MetaData'
 
 export default function Page() {
-  const links = ['sunburst-sequences', 'sunburst-basic']
+  const links = ['sequences-sunburst', 'sunburst-basic']
 
   return (
     <div>
+      <MetaData
+        description="The D3 Playground Of Alan W. Smith"
+        image="https://res.cloudinary.com/awsimages/image/upload/w_1200,h_630/c_fit,l_text:Arial_72_bold:A%20Place%20For%20Me%20To%20Play%20With%20D3,co_rgb:c4d4f4,w_1100/fl_layer_apply,g_north_west,x_60,y_220/og-images/d3-playground-main.png"
+        title="D3 Playground"
+        type="website"
+        url="https://d3-playground.alanwsmith.com/"
+      />
+
       <h1>D3 Playground</h1>
       <p>
         This is my scratchpad for making <a href="https://d3js.org/">D3</a>{' '}

@@ -2,10 +2,18 @@ import D3Example from '../../components/D3Example'
 import SourceCode from '../../components/SourceCode'
 import fs from 'fs'
 import Link from 'next/link'
+import MetaData from '../../components/MetaData'
 
 export default function Page(props) {
   return (
     <div>
+      <MetaData
+        description="A quick article showing how to implement D3 visualizations in Next.js"
+        image="https://res.cloudinary.com/awsimages/image/upload/w_1200,h_630/c_fit,l_text:Arial_72_bold:How-to%20Use%20D3%20in%20Next.js,co_rgb:c4d4f4,w_1100/fl_layer_apply,g_north_west,x_60,y_220/og-images/d3-playground-main.png"
+        title="How-To Use D3 In Next.js"
+        type="article"
+        url="https://d3-playground.alanwsmith.com/how-to-use-d3-in-nextjs"
+      />
       <h1>How-to Use D3 in Next.js</h1>
       <p>
         I implemened a version of{' '}
