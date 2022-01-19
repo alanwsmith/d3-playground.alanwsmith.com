@@ -6,7 +6,7 @@ export default function LayoutMain({ children }) {
       <nav className="mt-4 mx-auto pt-2 px-6 max-w-prose">
         <div className="border-b border-gray-700">
           <Link href="/">
-            <a className="text-gray-500">D3 Scratchpad</a>
+            <a className="text-gray-500">D3 Playground</a>
           </Link>{' '}
           -{' '}
           <a className="text-gray-500" href="https://www.alanwsmith.com/">

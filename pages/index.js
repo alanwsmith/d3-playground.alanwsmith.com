@@ -5,8 +5,7 @@ export default function Page() {
 
   return (
     <div>
-      <h1>D3 Scratchpad</h1>
-
+      <h1>D3 Playground</h1>
       <p>
         This is my scratchpad for making <a href="https://d3js.org/">D3</a>{' '}
         examples that work with <a href="https://nextjs.org/">Next.js</a>
