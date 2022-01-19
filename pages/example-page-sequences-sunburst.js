@@ -1,6 +1,6 @@
-import SunburstSequences from '../components/SunburstSequences'
+import SunburstSequences from '../components/SequencesSunburst'
 
-import json from '../public/data/sunburst-sequences.json'
+import json from '../public/data/sequences-sunburst.json'
 
 export default function Page() {
   return (
